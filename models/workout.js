@@ -17,7 +17,6 @@ const workoutSchema = new Schema({
         distance: Number,
         trim: true,
         required: "Exercise is required"
-
     },
 })
 
