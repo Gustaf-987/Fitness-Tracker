@@ -17,10 +17,10 @@ app.use(express.static("public"));
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
-const apiroutes = require("./routes/apiroutes")
-const htmlroutes = require("./routes/htmlroutes")
+const apiroutes = require("./routes/apiroutes");
+// const htmlroutes = require("./routes/htmlroutes");
 app.use(apiroutes);
-app.use(htmlroutes)
+// app.use(htmlroutes);
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
