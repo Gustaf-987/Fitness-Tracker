@@ -15,7 +15,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
+const MONGODB_URI = process.env.MONGO_ATLAS_DEPLOYMENT ||
+    "mongodb://localhost/workout";
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 const apiroutes = require("./routes/apiroutes");
 // const htmlroutes = require("./routes/htmlroutes");
