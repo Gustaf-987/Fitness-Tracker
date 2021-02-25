@@ -42,7 +42,7 @@ router.get("/api/workouts/range", function(req, res) {
 
 router.post("/api/workouts", function(req, res) {
     db.Workout.create(req.body)
-        .then(function(req, res) {
+        .then(function(results) {
             res.json(results);
         }).catch(err => res.json(err))
 })
