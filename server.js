@@ -25,7 +25,7 @@ mongoose.connect(
 );
 
 app.use(require("./routes/apiroutes.js"));
-// const htmlroutes = require("./routes/htmlroutes");
+app.use(require("./routes/htmlroutes.js"));
 // app.use(apiroutes);
 // app.use(htmlroutes);
 

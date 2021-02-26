@@ -1,6 +1,18 @@
-// var db = require("../models");
-// var path = require("path");
+const path = require("path");
+// const db = require("../db");
+const router = require("express").Router();
 
-// module.exports = function(app) {
+//html Routes
+// router.get("/", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+// });
 
-// }
+router.get("/stats", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/stats.html"))
+});
+
+router.get("/exercise", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/exercise.html"))
+})
+
+module.exports = router;
