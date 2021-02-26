@@ -1,7 +1,7 @@
 const express = require("express");
 const logger = require("morgan");
 const mongoose = require("mongoose");
-const apiroutes = require("./routes/apiroutes.js");
+// const apiroutes = require("./routes/apiroutes.js");
 const PORT = process.env.PORT || 3000;
 
 // const db = require("./models");
@@ -19,14 +19,14 @@ mongoose.connect(
     process.env.MONGODB_URI || 'mongodb://localhost/workout', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
-        useCreateIndex: true,
+        // useCreateIndex: true,
         useFindAndModify: false
     }
 );
 
-
+app.use(require("./routes/apiroutes.js"));
 // const htmlroutes = require("./routes/htmlroutes");
-app.use(apiroutes);
+// app.use(apiroutes);
 // app.use(htmlroutes);
 
 app.listen(PORT, () => {
