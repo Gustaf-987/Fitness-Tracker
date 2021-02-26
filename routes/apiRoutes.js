@@ -1,5 +1,5 @@
 const path = require("path");
-const db = require("../models");
+const db = require("../db");
 const router = require("express").Router();
 
 
@@ -50,15 +50,15 @@ router.post("/api/workouts", function(req, res) {
 router.put("/api/workouts/:id", function(req, res) {
     db.Workout.findByIdAndUpdate(req.params.id, { $push: { exercises: req.body } }, { new: true })
         .then(function(results) {
-            console.log(results);
+            // console.log(results);
             res.json(results);
         }).catch(err => res.json(err))
 })
 
 //html Routes
-router.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/index.html"))
-});
+// router.get("/", function(req, res) {
+//     res.sendFile(path.join(__dirname, "../public/index.html"))
+// });
 
 router.get("/stats", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/stats.html"))
